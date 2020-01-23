@@ -3,7 +3,7 @@ class Bird {
     this.x = width * 0.20;
     this.y = height / 2;
     this.size = 30;
-    this.gravity = 1;
+    this.gravity = 0.8;
     this.velocity = 0;
     this.terminalVelocity = 20.0;
     this.score = 0;
@@ -17,6 +17,7 @@ class Bird {
   update() {
     stroke(255, 100);
     this.velocity += this.gravity;
+
     this.y += this.velocity;
     let birdBottom = height - (this.size / 2);
     let birdTop = 0 + (this.size / 2);
@@ -31,11 +32,13 @@ class Bird {
   }
 
   flap() {
-    this.velocity -= sqrt(this.gravity * h) / 1.6;
-    this.velocity *= 0.9;
-    let maxUp = 3;
-    if (this.velocity > maxUp) {
-      this.velocity = maxUp;
-    }
+    //this.velocity -= sqrt(this.gravity * h) / 1.6;
+    //this.velocity *= 0.9;
+    //let maxUp = 3;
+    //if (this.velocity > maxUp) {
+    //  this.velocity = maxUp;
+    //}
+
+    this.velocity = -15;
   }
 }
